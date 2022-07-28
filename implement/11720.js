@@ -3,9 +3,6 @@ let input = fs
   .readFileSync(process.platform === "linux" ? "/dev/stdin" : "input.txt")
   .toString()
   .trim()
-  .split("\n")
-  .map(x=>+x);
+  .split("\n");
 
-let max = Math.max(...input);
-console.log(max);
-console.log(input.indexOf(max)+1);
+console.log(input[1].split("").map(x=>+x).reduce((t,c)=> t+c, 0));
