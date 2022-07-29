@@ -1,13 +1,15 @@
-var fs = require("fs");
-var input = fs.readFileSync("input.txt").toString().split(" "); // input.txt, /dev/stdin
-// var input = fs.readFileSync("/dev/stdin").toString().split(" "); // input.txt, /dev/stdin
+let input = require("fs")
+  .readFileSync(process.platform === "linux" ? "/dev/stdin" : "input.txt")
+  .toString()
+  .trim()
+  .split(" ");
 
-let numerator = +input[0];
-let denominator = +input[1];
-let n = +input[2];
-let arr = new Array(1000000);
+let [m,s,f] = [+input[0], +input[1], +input[2]];
 
-for (let i= 0 ; i < n; i++)
+let value = m % s;
+for (let i = 0 ; i < f; i++)
 {
   
 }
+
+console.log(value);
